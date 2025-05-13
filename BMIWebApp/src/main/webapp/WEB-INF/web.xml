@@ -1,0 +1,33 @@
+<web-app xmlns="http://jakarta.ee/xml/ns/jakartaee"
+         version="5.0">
+
+    <!-- Servlet -->
+    <servlet>
+        <servlet-name>BMI</servlet-name>
+        <servlet-class>servlet.BMIServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BMI</servlet-name>
+        <url-pattern>/bmi</url-pattern>
+    </servlet-mapping>
+
+    <!-- Filter -->
+    <filter>
+        <filter-name>BMIInputFilter</filter-name>
+        <filter-class>filter.BMIInputFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>BMIInputFilter</filter-name>
+        <url-pattern>/bmi</url-pattern>
+    </filter-mapping>
+
+    <!-- Listener -->
+    <listener>
+        <listener-class>listener.AppContextListener</listener-class>
+    </listener>
+
+    <!-- Welcome file -->
+    <welcome-file-list>
+        <welcome-file>bmi.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
